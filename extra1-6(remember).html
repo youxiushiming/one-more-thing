@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>remember</title>
+        <style>
+        body,
+        input{
+            margin:0;
+            padding:0;
+        }
+        body{
+            font:12px/1.5 Tahoma;
+        }
+        #i666{
+            width:200px;
+            margin:10px auto;
+        }
+        input{
+            margin-right:5px;
+            vertical-align:middle;
+        }
+        #tips{
+            padding:5px;
+            margin-top:5px;
+            background:#dfd;
+            border:1px solid pink;
+            display:none;
+        }
+        </style>
+        <script>
+        window.onload=function(){
+            var oTips=document.getElementById("tips");
+            var oLabel=document.getElementsByTagName("label")[0];
+            oLabel.onmouseover=function(){
+                oTips.style.display="block";
+            }
+            oLabel.onmouseout=function(){
+                oTips.style.display="none";
+            }
+        }
+        </script>
+    </head>
+    <body>
+        <div id="i666">
+            <label><input type="checkbox"/>两天内自动登录</label>
+            <div id="tips">为了您的信息安全，请谨慎在公共场合使用此功能</div>
+        </div>
+    </body>
+</html>

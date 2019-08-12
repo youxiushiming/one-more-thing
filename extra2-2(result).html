@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>result</title>
+        <style>
+        body{
+            font:12px/1.5 Tahoma;
+            color:yellowgreen;
+        }
+        #i666{
+            width:500px;
+            margin:0 auto;
+        }
+        #i666 div{
+            padding:3px;
+            border:1px solid black;
+            font-family:inherit;
+            width:220px;
+            margin-right:10px;
+        }
+        .sum{
+            font-size:30px;
+            color:red;
+        }
+        </style>
+        <script>
+            window.onload=function(){
+                var oBtn=document.getElementsByTagName("button")[0];
+                var oInput=document.getElementsByTagName("input")[0];
+                var oStrong=document.getElementsByTagName("strong")[0];
+                oInput.onkeyup=function(){
+                    this.value=this.replace(/[^(\d)|(,)]/,"");
+                }
+                oBtn.onclick=function(){
+                    var sum=0;              
+                    var oInput=document.getElementsByTagName("input")[0].value.split(",");
+                    for(var i in oInput){
+                        sum+=parseInt(oInput[i]);
+                    }  
+                    oStrong.innerHTML=sum;
+                    }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="i666">
+            <label><input type="text" value="1,1,1,1,1,1,11,1,1"/><span>请只输入数字</span></label>
+            <p><button>求和</button></p>
+            <strong class="sum"></strong>
+        </div>
+    </body>
+</html>
